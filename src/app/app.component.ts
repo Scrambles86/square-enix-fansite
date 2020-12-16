@@ -1,22 +1,23 @@
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from './api.service';
 import { Component, OnInit } from '@angular/core';
+import { ApiResponse, Game } from './models/test.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Square Enix Fansite';
-  games:any
-  constructor(private http: HttpClient) {}
-    private getData() {
-      this.http.get('https://api.rawg.io/api/games?dates=2010-01-01,2020-12-31&developers=4132')
-      .subscribe((game) => {
-        console.log(game.results)
-      })
+  games: Game[] = [];
 
+  constructor(private apiService: ApiService) {
+    this.getGames();
   }
-  ngOnInit() {
-    this.getData()
+
+  getGames(): void {
+    this.apiService.getData().subscribe((resp: ApiResponse) => {
+      this.games = resp.results;
+      console.log(this.games);
+      });
+    }
   }
-}
