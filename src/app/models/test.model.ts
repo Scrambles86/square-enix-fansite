@@ -4,28 +4,29 @@ export interface Platform {
   slug: string;
  }
 
- export interface Platform {
+export interface Platform {
   platform: Platform;
  }
 
- export interface Store {
+export interface Store {
   id: number;
   name: string;
   slug: string;
  }
 
- export interface Store {
+export interface Store {
   store: Store;
  }
 
- export interface Rating {
+export interface Rating {
   id: number;
   title: string;
   count: number;
   percent: number;
  }
 
- export interface Added_by_statu {
+// tslint:disable-next-line: class-name
+export interface Added_by_statu {
   yet: number;
   owned: number;
   beaten: number;
@@ -34,20 +35,20 @@ export interface Platform {
   playing: number;
  }
 
- export interface Clip {
+export interface Clip {
   320: string;
   640: string;
   full: string;
  }
 
- export interface Clip {
+export interface Clip {
   clip: string;
   clips: Clip;
   video: string;
   preview: string;
  }
 
- export interface Tag {
+export interface Tag {
   id: number;
   name: string;
   slug: string;
@@ -56,7 +57,8 @@ export interface Platform {
   image_background: string;
  }
 
- export interface Esrb_rating {
+// tslint:disable-next-line: class-name
+export interface Esrb_rating {
   id: number;
   name: string;
   slug: string;
@@ -64,28 +66,30 @@ export interface Platform {
   name_ru: string;
  }
 
- export interface Short_screenshot {
+// tslint:disable-next-line: class-name
+export interface Short_screenshot {
   id: number;
   image: string;
  }
 
- export interface Platform {
+export interface Platform {
   id: number;
   name: string;
   slug: string;
  }
 
- export interface Parent_platform {
+// tslint:disable-next-line: class-name
+export interface Parent_platform {
   platform: Platform;
  }
 
- export interface Genre {
+export interface Genre {
   id: number;
   name: string;
   slug: string;
  }
 
- export interface Game {
+export interface Game {
   slug: string;
   name: string;
   playtime: number;
@@ -118,7 +122,7 @@ export interface Platform {
   genres: Genre[];
  }
 
- export interface ApiResponse {
+export interface ApiResponse {
   count: number;
   next: string;
   previous?: any;
