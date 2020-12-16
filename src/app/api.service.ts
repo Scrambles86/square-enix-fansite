@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<object> {
+  getData(): Observable<any> {
     return this.http.get(
       'https://api.rawg.io/api/games?dates=2010-01-01,2020-12-31&developers=4132'
     );

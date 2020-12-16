@@ -4,7 +4,7 @@ import { ApiResponse, Game } from './models/test.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Square Enix Fansite';
@@ -15,9 +15,8 @@ export class AppComponent {
   }
 
   getGames(): void {
-    this.apiService.getData().subscribe((resp: ApiResponse) => {
-      this.games = resp.results;
-      console.log(this.games);
-      });
-    }
-  }
+    this.apiService.getData().subscribe((games: ApiResponse) => {
+      this.games = games.results;
+  });
+}
+}

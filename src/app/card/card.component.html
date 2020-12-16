@@ -1,11 +1,17 @@
-<div class="card h-100 card-border">
-  <img class="card-img-top" src="#" alt="Card image cap">
+<ng-container *ngIf="games.length > 0">
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let game of games">
+<div class="card h-100 card-border" >
+  <img class="card-img-top" src="{{game.background_image}}" alt="Card image cap">
   <div class="card-body text-center">
     <h5 class="card-title">Game Name</h5>
     <p class="card-text">Platforms</p>
   </div>
-  <ul class="list-group list-group-flush text-center text-black">
+
+    </div>
+    <ul class="list-group list-group-flush text-center text-black">
     <li class="list-group-item">Release Date</li>
     <li class="list-group-item">Genre</li>
     <li class="list-group-item">Score</li>
   </ul>
+      </div>
+</ng-container>
